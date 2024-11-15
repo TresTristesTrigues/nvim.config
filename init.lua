@@ -6,6 +6,11 @@ vim.g.maplocalleader = ' '
 
 if vim.g.neovide then
   vim.o.guifont = 'FiraCode Nerd Font:h12'
+  vim.keymap.set({ 'n', 'v' }, '<C-+>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>')
+  vim.keymap.set({ 'n', 'v' }, '<C-->', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>')
+  vim.keymap.set({ 'n', 'v' }, '<C-ScrollWheelUp>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor + 0.1<CR>')
+  vim.keymap.set({ 'n', 'v' }, '<C-ScrollWheelDown>', ':lua vim.g.neovide_scale_factor = vim.g.neovide_scale_factor - 0.1<CR>')
+  vim.keymap.set({ 'n', 'v' }, '<C-0>', ':lua vim.g.neovide_scale_factor = 1<CR>')
 end
 
 -- Set to true if you have a Nerd Font installed and selected in the terminal
